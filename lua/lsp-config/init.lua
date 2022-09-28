@@ -1,4 +1,10 @@
-require("mason").setup({
+local status, mason = pcall(require, "mason")
+if(not status) then return end
+
+local status2, lspconfig = pcall(require, "mason-lspconfig")
+if(not status2) then return end
+
+mason.setup({
     ui = {
         icons = {
             package_installed = "✓",
@@ -7,21 +13,12 @@ require("mason").setup({
         }
     }
 })
-require("mason-lspconfig").setup({
-    ensure_installed = {"sumneko_lua", "tsserver", "clangd", "pyright"}
+
+lspconfig.setup({
+    ensure_installed = {"sumneko_lua", "tsserver", "clangd", "pyright", "tailwindcss"}
 })
 
 local lsp = require "lspconfig"
-
-vim.g.coq_settings = {
-    ["auto_start"] = "shut-up",
-    ["display.icons.mode"] = "short",
-    ["display.icons.spacing"] = 1,
-    ["display.pum.kind_context"] = {"[", "]"}, -- icons 
-    ["display.pum.source_context"] = {"「", "」"} -- source
-}
-
-local coq = require "coq"
 
 local servers = {
     "clangd",
@@ -31,5 +28,5 @@ local servers = {
     "tailwindcss"}
 
 for _, server in ipairs(servers) do
-    lsp[server].setup(coq.lsp_ensure_capabilities())
+    lsp[server].setup{}
 end

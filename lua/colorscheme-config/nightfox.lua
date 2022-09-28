@@ -1,11 +1,11 @@
 require('nightfox').setup({
     options = {
-        transparent = true 
+        transparent = false
     }
 })
 
 
-vim.cmd("colorscheme carbonfox")
+vim.cmd("colorscheme nightfox")
 
 --[[ require('lualine').setup({
     options = { theme = 'carbonfox'}
