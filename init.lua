@@ -1,0 +1,8 @@
+require("settings")
+require("colorscheme-config.nightfox")
+require("packer-config")
+require("nvim-tree-config")
+require("lualine-config")
+require("lsp-config")
+require("mapping")
+require("treesitter-config")
