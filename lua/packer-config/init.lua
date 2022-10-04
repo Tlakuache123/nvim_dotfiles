@@ -33,7 +33,7 @@ return require('packer').startup(function()
         'rafamadriz/friendly-snippets',
     }
 
-    use "glepnir/lspsaga.nvim"
+    use {"glepnir/lspsaga.nvim", branch = "main"}
     -- Autoclose tags
     use {
         'windwp/nvim-ts-autotag',
