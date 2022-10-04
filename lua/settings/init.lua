@@ -1,5 +1,6 @@
 local set = vim.opt
 
+set.completeopt = "menu,menuone,noselect"
 set.mouse = a
 set.autoindent = true
 

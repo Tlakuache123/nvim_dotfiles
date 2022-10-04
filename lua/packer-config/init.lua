@@ -2,6 +2,8 @@ return require('packer').startup(function()
     -- Packer manage itself
     use 'wbthomason/packer.nvim'
     use 'EdenEast/nightfox.nvim' -- Colorsheme
+    use 'folke/tokyonight.nvim' -- Colorsheme
+    use "lukas-reineke/indent-blankline.nvim" -- Blanklike
     use {
         'kyazdani42/nvim-tree.lua', -- Tree
         requires = { 'kyazdani42/nvim-web-devicons', opt = false} -- icons
@@ -25,6 +27,10 @@ return require('packer').startup(function()
         'hrsh7th/cmp-nvim-lsp',
         'L3MON4D3/LuaSnip',
         'onsails/lspkind-nvim',
+        'hrsh7th/cmp-path',
+        'hrsh7th/cmp-cmdline',
+        'saadparwaiz1/cmp_luasnip',
+        'rafamadriz/friendly-snippets',
     }
 
     use "glepnir/lspsaga.nvim"

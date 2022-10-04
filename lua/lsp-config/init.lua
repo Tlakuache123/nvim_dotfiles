@@ -18,15 +18,4 @@ lspconfig.setup({
     ensure_installed = {"sumneko_lua", "tsserver", "clangd", "pyright", "tailwindcss"}
 })
 
-local lsp = require "lspconfig"
 
-local servers = {
-    "clangd",
-    "sumneko_lua",
-    "tsserver",
-    "pyright",
-    "tailwindcss"}
-
-for _, server in ipairs(servers) do
-    lsp[server].setup{}
-end

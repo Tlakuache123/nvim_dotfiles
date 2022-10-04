@@ -1,10 +1,14 @@
+-- Beauty
 require("settings")
-require("colorscheme-config.nightfox")
+require("colorscheme-config.tokyonight")
 require("packer-config")
 require("nvim-tree-config")
 require("lualine-config")
+
+-- Autocomplete
 require("lsp-config")
 require("cmp-config")
+
 require("mapping")
 require("treesitter-config")
 require("autotag-config")
