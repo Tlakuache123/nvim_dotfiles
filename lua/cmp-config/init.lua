@@ -26,7 +26,7 @@ cmp.setup({
         ['<CR>'] = cmp.mapping.confirm({
             select = true
         }),
-        ["<Tab>"] = cmp.mapping(function (fallback)
+        --[[["<Tab>"] = cmp.mapping(function (fallback)
             if cmp.visible() then
                 cmp.select_next_item()
             elseif luasnip.expand_or_jumpable() then
@@ -45,7 +45,7 @@ cmp.setup({
         else
             fallback()
             end
-        end, { "i", "s" }),
+        end, { "i", "s" }),]]--
     }),
     sources = cmp.config.sources({
         {name = 'nvim_lsp'},
@@ -78,7 +78,9 @@ local servers = {
     "sumneko_lua",
     "tsserver",
     "pyright",
-    "tailwindcss"}
+    "tailwindcss",
+    "rust_analyzer"
+}
 
 for _, server in ipairs(servers) do
     lsp[server].setup{ capabilities = capabilities }
