@@ -71,18 +71,12 @@ cmp.setup.cmdline(':', {
   })
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
-local lsp = require "lspconfig"
+local mason_lspconfig = require("mason-lspconfig")
 
-local servers = {
-    "clangd",
-    "sumneko_lua",
-    "tsserver",
-    "pyright",
-    "tailwindcss",
-    "rust_analyzer",
-    "astro"
-}
-
-for _, server in ipairs(servers) do
-    lsp[server].setup{ capabilities = capabilities }
-end
+mason_lspconfig.setup_handlers({
+    function (server_name)
+        require("lspconfig")[server_name].setup {
+            capabilities = capabilities
+        }
+    end
+})

@@ -13,8 +13,6 @@ require("mapping")
 require("treesitter-config")
 require("autotag-config")
 require("lspsaga-config")
-require("prettier-config")
 require("git-config")
 require("telescope-config")
 require("bufferline-config")
-
