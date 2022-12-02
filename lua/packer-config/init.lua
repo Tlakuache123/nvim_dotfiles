@@ -1,22 +1,23 @@
 return require("packer").startup(function()
 	-- Packer manage itself
 	use("wbthomason/packer.nvim")
-	use("EdenEast/nightfox.nvim") -- Colorsheme
-  use ("ellisonleao/gruvbox.nvim")
-	use("folke/tokyonight.nvim") -- Colorsheme
-	use("lukas-reineke/indent-blankline.nvim") -- Blanklike
+	-- Colorschemes
+	use("EdenEast/nightfox.nvim")
+	use("folke/tokyonight.nvim")
+	use("tiagovla/tokyodark.nvim")
+	-- Blankline
+	use("lukas-reineke/indent-blankline.nvim")
+	-- Nvim tree
 	use({
-		"kyazdani42/nvim-tree.lua", -- Tree
-		requires = { "kyazdani42/nvim-web-devicons", opt = false }, -- icons
+		"kyazdani42/nvim-tree.lua",
+		requires = { "kyazdani42/nvim-web-devicons", opt = false },
 	})
+	-- Status line
 	use("nvim-lualine/lualine.nvim")
+	-- Treesitter
 	use({
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
-	})
-	use({
-		"dsznajder/vscode-es7-javascript-react-snippets",
-		run = "yarn install --frozen-lockfile && yarn compile",
 	})
 	use({
 		"williamboman/mason.nvim",
@@ -35,7 +36,7 @@ return require("packer").startup(function()
 		"saadparwaiz1/cmp_luasnip",
 		"rafamadriz/friendly-snippets",
 	})
-
+	-- Lsp Saga
 	use({ "glepnir/lspsaga.nvim", branch = "main" })
 	-- Autoclose tags
 	use({
@@ -58,16 +59,4 @@ return require("packer").startup(function()
 	})
 	-- Bufferline
 	use({ "akinsho/bufferline.nvim", tag = "v2.*" })
-	-- Zen mode
-	use({
-		"folke/zen-mode.nvim",
-		config = function()
-			require("zen-mode").setup({
-				kitty = {
-					enabled = true,
-					font = "+4", -- font size increment
-				},
-			})
-		end,
-	})
 end)
