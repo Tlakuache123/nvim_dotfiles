@@ -2,6 +2,7 @@ return require("packer").startup(function()
 	-- Packer manage itself
 	use("wbthomason/packer.nvim")
 	use("EdenEast/nightfox.nvim") -- Colorsheme
+  use ("ellisonleao/gruvbox.nvim")
 	use("folke/tokyonight.nvim") -- Colorsheme
 	use("lukas-reineke/indent-blankline.nvim") -- Blanklike
 	use({

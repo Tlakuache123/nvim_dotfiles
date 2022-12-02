@@ -1,7 +1,7 @@
 -- Beauty
 require("settings")
 require("packer-config")
-require("colorscheme-config.tokyonight")
+require("colorscheme-config.gruvbox")
 require("nvim-tree-config")
 require("lualine-config")
 
