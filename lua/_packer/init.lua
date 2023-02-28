@@ -1,19 +1,17 @@
-return require("packer").startup(function()
-	-- Packer manage itself
+return require("packer").startup(function(use)
+	-- Core plugins
 	use("wbthomason/packer.nvim")
-	-- Colorschemes
-	use("EdenEast/nightfox.nvim")
-	use("folke/tokyonight.nvim")
-	use("tiagovla/tokyodark.nvim")
-	-- Blankline
-	use("lukas-reineke/indent-blankline.nvim")
-	-- Nvim tree
-	use({
-		"kyazdani42/nvim-tree.lua",
-		requires = { "kyazdani42/nvim-web-devicons", opt = false },
-	})
-	-- Status line
 	use("nvim-lualine/lualine.nvim")
+	use({ "akinsho/bufferline.nvim", tag = "v3.*" })
+	use({
+		"nvim-tree/nvim-tree.lua",
+		requires = { "nvim-tree/nvim-web-devicons" },
+	})
+	use({
+		"nvim-telescope/telescope.nvim",
+		branch = "0.1.x",
+		requires = { { "nvim-lua/plenary.nvim" } },
+	})
 	-- Treesitter
 	use({
 		"nvim-treesitter/nvim-treesitter",
@@ -51,12 +49,7 @@ return require("packer").startup(function()
 	use({
 		"lewis6991/gitsigns.nvim",
 	})
-	-- Finder
-	use({
-		"nvim-telescope/telescope.nvim",
-		tag = "0.1.0",
-		requires = { { "nvim-lua/plenary.nvim" } },
-	})
-	-- Bufferline
-	use({ "akinsho/bufferline.nvim", tag = "v2.*" })
+
+	-- Colorscheme
+	use("EdenEast/nightfox.nvim")
 end)

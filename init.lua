@@ -1,18 +1,21 @@
--- Beauty
-require("settings")
-require("packer-config")
-require("colorscheme-config.tokyodark")
-require("nvim-tree-config")
-require("lualine-config")
+-- Sential
+require("_settings")
+require("_packer")
+-- Colorscheme
+require("_colorscheme")
+-- Core
+require("_nvim-tree")
+require("_lualine")
+require("_bufferline")
 
 -- Autocomplete
-require("lsp-config")
-require("cmp-config")
+require("_lsp")
+require("_cmp")
 
-require("mapping")
-require("treesitter-config")
-require("autotag-config")
-require("lspsaga-config")
-require("git-config")
-require("telescope-config")
-require("bufferline-config")
+require("_mapping")
+require("_treesitter")
+require("_autotag")
+require("_lspsaga")
+require("_git")
+require("_telescope")
+
