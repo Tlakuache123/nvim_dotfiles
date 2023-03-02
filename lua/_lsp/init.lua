@@ -15,7 +15,7 @@ mason.setup({
 })
 
 lspconfig.setup({
-    ensure_installed = {"sumneko_lua", "tsserver", "clangd", "pyright", "tailwindcss"}
+    ensure_installed = {"tsserver", "clangd", "pyright", "tailwindcss"}
 })
 
 local signs = {
