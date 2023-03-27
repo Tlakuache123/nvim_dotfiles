@@ -3,6 +3,7 @@ return require("packer").startup(function(use)
 	use("wbthomason/packer.nvim")
 	use("nvim-lualine/lualine.nvim")
 	use({ "akinsho/bufferline.nvim", tag = "v3.*" })
+	use("tiagovla/scope.nvim")
 	use({
 		"nvim-tree/nvim-tree.lua",
 		requires = { "nvim-tree/nvim-web-devicons" },
@@ -52,4 +53,5 @@ return require("packer").startup(function(use)
 
 	-- Colorscheme
 	use("EdenEast/nightfox.nvim")
+  use("folke/tokyonight.nvim")
 end)

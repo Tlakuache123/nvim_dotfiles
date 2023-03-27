@@ -1,4 +1,9 @@
-require("nvim-tree").setup({
+local status, nvim_tree = pcall(require, "nvim-tree")
+if not status then
+	return
+end
+
+nvim_tree.setup({
     sort_by = "case_sensitive",
     view = {
         adaptive_size = true,
@@ -9,3 +14,7 @@ require("nvim-tree").setup({
         }
     }
 })
+
+local function open_nvim_tree()
+  require("nvim-tree.api").tree.open()
+end
